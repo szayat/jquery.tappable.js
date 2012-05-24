@@ -91,7 +91,7 @@
 
     var fireCallback = function(el, event) {
       if (typeof callback == 'function' && onlyIf(el)) {
-        callback.call(el, event)
+        return callback.call(el, event)
       }
     }
 
@@ -120,7 +120,7 @@
             .removeClass('touched')
             .removeClass('touch-started')
 
-          fireCallback(el, event)
+          return fireCallback(el, event)
         }
 
         return true
