@@ -140,7 +140,7 @@
     } else if (typeof callback == 'function') {
       this.bind('click', function(event) {
         if (onlyIf(this)) {
-          callback.call(this, event)
+          return callback.call(this, event)
         }
       })
     }
